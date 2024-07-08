@@ -3,6 +3,7 @@
 import {signIn, signOut, useSession} from "next-auth/react";
 import React from "react";
 import Link from "next/link";
+import {Button, buttonVariants} from "@/components/ui/button";
 
 interface LogInOutButtonProps {
   isLoggedIn: boolean
@@ -12,15 +13,15 @@ interface LogInOutButtonProps {
 const LogInOutButton: React.FC<LogInOutButtonProps> = ( { isLoggedIn }) => {
   if (isLoggedIn){
     return (
-      <button
+      <Button variant="link"
         onClick={() => signOut()}
       >
         Sign Out
-      </button>
+      </Button>
     )
   }else {
     return (
-      <Link href={'/api/auth/signin'}>
+      <Link className={buttonVariants({ variant: "link" })} href={'/api/auth/signin'}>
         Log In
       </Link>
     )
