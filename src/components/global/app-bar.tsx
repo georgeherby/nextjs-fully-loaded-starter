@@ -8,8 +8,8 @@ const AppBar = async () => {
 
 
   return (
-    <div className={'flex w-full justify-between border-b-2'}>
-      <h2>App Name</h2><ThemeToggle/> <LogInOutButton isLoggedIn={session !== null}  />
+    <div className={'flex w-full justify-between border-b-2 items-center pl-3'}>
+      <ThemeToggle/><h2>App Name</h2><LogInOutButton isLoggedIn={session !== null}  />
     </div>
 )
 }
