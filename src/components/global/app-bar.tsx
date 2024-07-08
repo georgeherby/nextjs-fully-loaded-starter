@@ -1,7 +1,7 @@
 import ThemeToggle from "@/components/global/theme-toggle";
 import LogInOutButton from "@/components/global/log-in-out-button";
 import {getServerSession} from "next-auth";
-import {authOptions} from "@/app/api/auth/[...nextauth]/route";
+import authOptions from "@/utils/auth-options";
 
 const AppBar = async () => {
   const session = await getServerSession(authOptions)
